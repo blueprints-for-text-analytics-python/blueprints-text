@@ -1,0 +1,39 @@
+name: blueprints 
+  
+channels:
+  - conda-forge
+  - plotly 
+
+dependencies:
+  - python=3.8
+  - regex 
+  - unidecode 
+  - tabulate
+  
+  - pandas>=1.1.0
+  - scikit-learn>=0.23.2
+  - matplotlib 
+  - seaborn
+  - plotly_express>=0.4.1
+  - umap-learn
+
+  - notebook 
+  - jupyter 
+  - jupyter_contrib_nbextensions
+  - jupyter_nbextensions_configurator 
+
+  - networkx
+  - graphviz
+  - python-graphviz
+  
+  - pip
+
+  - pip:
+    # add pip-distributed libraries
+    - beautifulsoup4
+    - nltk
+    - spacy>=2.3.2
+    - textacy
+    - gensim
+    - pyldavis
+    - wordcloud
