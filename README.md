@@ -14,6 +14,8 @@ Github: [https://github.com/blueprints-for-text-analytics-python](https://github
 
 # Content
 
+**This repository is currently in preparation. Please do not yet send any comments.**
+
 This repository contains the code examples of our O'Reilly book. You will find a subdirectory for each chapter containing a jupyter notebook and additional files for the setup. You can view the notebook content here on Github. The most simple way to execute the code without any setup is to use [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb#), Google's free cloud-based service for machine-learning with Python. Simply click on the links provided in the next section. In the section thereafter, you will find instructions to setup the environment on your local computer.
 
 If you discover any problems or have recommendations how to improve the code, do not hesitate to create an issue [here in the repository](https://github.com/blueprints-for-text-analytics-python/blueprints-text/issues).
