@@ -6,7 +6,7 @@ if ON_COLAB:
     print("You are working on Google Colab.")
     print(f'Files will be downloaded to "{BASE_DIR}".')
 else:
-    BASE_DIR = "."
+    BASE_DIR = ".."
     print("You are working on a local system.")
     print(f'Files will be searched relative to "{BASE_DIR}".')
 
