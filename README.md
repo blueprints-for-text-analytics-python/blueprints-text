@@ -26,7 +26,7 @@ For errors in the book text, please use [O'Reilly's errata page](https://www.ore
 
 Simply click on the link for respective chapter to open a runnable copy of the notebook on Colab. In Colab, click "View&rarr;Expand Sections" to view the complete code immediately. Don't forget to run the first code cells for the setup.
 
-  * [Chapter 1: Gaining Early Insights from Textual Data](https://colab.research.google.com/github/blueprints-for-text-analytics-python/early-release/blob/master/ch01/Data_Exploration.ipynb#) 
+  * [Chapter 1: Gaining Early Insights from Textual Data](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/Data_Exploration.ipynb#) 
   * [Chapter 2]() 
   * [Chapter 3]() 
   * [Chapter 4]() 
