@@ -9,6 +9,7 @@ import math
 import re
 import glob
 import os
+import sys
 import json
 import random
 import pprint as pp
@@ -35,18 +36,17 @@ pd.set_option('display.html.use_mathjax', False)
 
 # np.set_printoptions(edgeitems=3) # default 3
 
-import matplotlib as mpl
+import matplotlib
 from matplotlib import pyplot as plt
 
-plot_params = {'figure.figsize': (8, 4),
+plot_params = {'figure.figsize': (8, 4), 
                'axes.labelsize': 'large',
                'axes.titlesize': 'large',
                'xtick.labelsize': 'large',
                'ytick.labelsize':'large',
-               'figure.dpi': 200 }
+               'figure.dpi': 100}
 # adjust matplotlib defaults
-mpl.rcParams.update(plot_params)
+matplotlib.rcParams.update(plot_params)
 
 import seaborn as sns
 sns.set_style("darkgrid")
-
