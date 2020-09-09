@@ -8,7 +8,9 @@ Published by [O'Reilly Media, 2020](https://www.oreilly.com/library/view/bluepri
 
 ![cover](https://learning.oreilly.com/library/cover/9781492074076/250w/)
 
-Github: [https://github.com/blueprints-for-text-analytics-python](https://github.com/blueprints-for-text-analytics-python)
+[Buy at O'Reilly](shop.oreilly.com)  
+[Buy at Amazon.com](https://www.amazon.com/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
+[Buy at Amazon.de](https://www.amazon.de/Blueprints-Text-Analytics-using-Python/dp/149207408X)
 
 -----------------------------------------------------------------------------------
 
@@ -28,7 +30,7 @@ Simply click on the link for respective chapter to open a runnable copy of the n
 
 You can run each cell separately by hitting "Shift-enter". Do not leave out any cell and don't forget to run the first code cells for the setup.
 
-  * <a href="https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/Data_Exploration.ipynb#" target="_blank">Chapter 1: Gaining Early Insights from Textual Data</a>
+  * <a href="https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb#" target="_blank">Chapter 1: Gaining First Insights from Textual Data</a>
 
 ## Local Setup
 
