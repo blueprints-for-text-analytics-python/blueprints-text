@@ -36,7 +36,7 @@ You can run each cell separately by hitting "Shift-enter". Do not leave out any 
 
 The following instructions should work on Linux and Windows. If you are a Windows user familiar with Linux, you should check out the [Windows Subsystem for Linux, Version 2 (WSL2)](https://docs.microsoft.com/en-us/windows/wsl/). This allows to use a Linux system on the Windows machine. However, using native Windows should also be no problem.
 
-It is helpful to install `git` on your machine, but you can also download the full repository from Github as a zip file. If you use git, run the following commands from the command line:
+It is helpful to install `git` on your machine, but you can also download the full repository from Github as a zip file. If you use `git`, run the following commands from the command line:
 
 ```sh
 git clone https://github.com/blueprints-for-text-analytics-python/blueprints-text.git
