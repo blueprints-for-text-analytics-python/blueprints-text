@@ -4,7 +4,7 @@
 
 [Jens Albrecht](https://www.linkedin.com/in/jens-albrecht), [Sidharth Ramachandran](https://www.linkedin.com/in/sidharthramachandran/), [Christian Winkler](https://www.linkedin.com/in/drchristianwinkler/)
 
-Published by [O'Reilly Media, 2020](https://www.oreilly.com/library/view/blueprints-for-text/9781492074076/)
+Published by [O'Reilly, 2020](https://www.oreilly.com/library/view/blueprints-for-text/9781492074076/)
 
 ![cover](https://learning.oreilly.com/library/cover/9781492074076/250w/)
 
