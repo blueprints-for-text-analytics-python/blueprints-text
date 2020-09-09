@@ -20,7 +20,7 @@ Published by [O'Reilly, 2020](https://www.oreilly.com/library/view/blueprints-fo
 
 This repository contains the code examples of our O'Reilly book. You will find a subdirectory for each chapter containing a jupyter notebook and additional files for the setup. You can view the notebook content here on Github. The most simple way to execute the code without any setup is to use [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb#), Google's free cloud-based service for machine-learning with Python. Simply click on the links provided in the next section. In the section thereafter, you will find instructions to setup the environment on your local computer.
 
-If you discover any problems or have recommendations how to improve the code, do not hesitate to create an issue [here in the repository](https://github.com/blueprints-for-text-analytics-python/blueprints-text/issues).
+If you discover any problems or have recommendations how to improve the code, do not hesitate to [create an issue here in the repository](https://github.com/blueprints-for-text-analytics-python/blueprints-text/issues).
 
 For errors in the book text, please use [O'Reilly's errata page](https://www.oreilly.com/catalog/errata.csp?isbn=0636920309222).
 
