@@ -8,7 +8,9 @@ Published by [O'Reilly Media, 2020](https://www.oreilly.com/library/view/bluepri
 
 ![cover](https://learning.oreilly.com/library/cover/9781492074076/250w/)
 
-Github: [https://github.com/blueprints-for-text-analytics-python](https://github.com/blueprints-for-text-analytics-python)
+[Buy at O'Reilly](shop.oreilly.com)  
+[Buy at Amazon.com](https://www.amazon.com/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
+[Buy at Amazon.de](https://www.amazon.de/Blueprints-Text-Analytics-using-Python/dp/149207408X)
 
 -----------------------------------------------------------------------------------
 
