@@ -54,7 +54,7 @@ conda env create --file blueprints.yml
 conda activate blueprints
 ```
 
-The prompt should change after activation and indicate that you are working in the `blueprints` environment. Our installation includes the [Jupyter notebook extensions](https://github.com/ipython-contrib/jupyter_contrib_nbextensions). We suggest to enable the extensions  table of contents (toc2), execute time, and variable inspector (varInspector):
+The prompt should change after activation and indicate that you are working in the `blueprints` environment. Our installation includes the [Jupyter notebook extensions](https://github.com/ipython-contrib/jupyter_contrib_nbextensions). We suggest to enable the extensions "table of contents" (toc2), "execute time", and "variable inspector" (varInspector):
 
 ```sh
 jupyter nbextension enable toc2/main
