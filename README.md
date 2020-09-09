@@ -26,7 +26,7 @@ For errors in the book text, please use [O'Reilly's errata page](https://www.ore
 
 ## Working on Google Colab
 
-Simply click on the link for respective chapter to open a runnable copy of the notebook on Colab. In Colab, click "View&rarr;Expand Sections" to view the complete code immediately. 
+Simply click on the link for the respective chapter to open a runnable copy of the notebook on Colab. In Colab, click "View&rarr;Expand Sections" to view the complete code immediately. 
 
 You can run each cell separately by hitting "Shift-enter". Do not leave out any cell and don't forget to run the first code cells for the setup.
 
