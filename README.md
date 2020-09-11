@@ -30,7 +30,7 @@ For errors in the book text, please use [O'Reilly's errata page](https://www.ore
 
 For each chapter of the book we provide three links: 
 
-  * "git" opens the notebook for viewing here on Github (sometimes not working because of problem of Github)
+  * "git" opens the notebook for viewing here on Github (sometimes not working because of [Github issue](https://github.com/jupyter/notebook/issues/3555))
   * "nbviewer" opens the notebook for viewing on nbviewer.ipython.org
   * "colab" opens a runnable copy on Google's Colab service.
 
