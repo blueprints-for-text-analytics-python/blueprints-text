@@ -59,7 +59,7 @@ For local setup, we recommend to use [Miniconda](https://docs.conda.io/en/latest
 After installation of Anaconda/Miniconda, run the following command(s) from the project directory:
 
 ```sh
-conda env create --file blueprints.yml
+conda env create --name blueprints --file blueprints.yml
 conda activate blueprints
 ```
 
