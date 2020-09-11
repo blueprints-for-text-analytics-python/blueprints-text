@@ -18,19 +18,28 @@ Published by [O'Reilly, 2020](https://www.oreilly.com/library/view/blueprints-fo
 
 **This repository is currently in preparation. Please do not yet send any comments.**
 
-This repository contains the code examples of our O'Reilly book. You will find a subdirectory for each chapter containing a jupyter notebook and additional files for the setup. You can view the notebook content here on Github. The most simple way to execute the code without any setup is to use [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb#), Google's free cloud-based service for machine-learning with Python. Simply click on the links provided in the next section. In the section thereafter, you will find instructions to setup the environment on your local computer.
+This repository contains the code examples of our O'Reilly book. You will find a subdirectory for each chapter containing a Jupyter notebook and additional files for the setup. 
+
+Below you find the links to view the notebooks here on Github or execute them directly on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb#). In the section thereafter you will find instructions to setup the environment on your local computer.
 
 If you discover any problems or have recommendations how to improve the code, do not hesitate to [create an issue here in the repository](https://github.com/blueprints-for-text-analytics-python/blueprints-text/issues).
 
 For errors in the book text, please use [O'Reilly's errata page](https://www.oreilly.com/catalog/errata.csp?isbn=0636920309222).
 
-## Working on Google Colab
+## View or Run the Notebooks
 
-Simply click on the link for the respective chapter to open a runnable copy of the notebook on Colab. In Colab, click "View&rarr;Expand Sections" to view the complete code immediately. 
+For each chapter of the book we provide three links: 
+
+  * "git" opens the notebook for viewing here on Github (sometimes not working because of problem of Github)
+  * "nbviewer" opens the notebook for viewing on nbviewer.ipython.org
+  * "colab" opens a runnable copy on Google's Colab service.
 
 You can run each cell separately by hitting "Shift-enter". Do not leave out any cell and don't forget to run the first code cells for the setup.
 
-  * <a href="https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb#" target="_blank">Chapter 1: Gaining First Insights from Textual Data</a>
+  * Chapter 1: Gaining First Insights from Textual Data
+  [git](blob/master/ch01/First_Insights.ipynb)
+  [nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)
+  [colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)
 
 ## Local Setup
 
