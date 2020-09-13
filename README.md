@@ -40,6 +40,11 @@ You can run each cell separately by hitting "Shift-enter". Do not leave out any 
   [[git](ch01/First_Insights.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
+* Chapter 12: Building a Knowledge Graph
+  [[git](ch12/Knowledge_Graph.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
+  [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
+
 
 ## Local Setup
 
