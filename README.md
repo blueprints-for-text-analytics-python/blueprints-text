@@ -36,11 +36,11 @@ For each chapter of the book we provide three links:
 
 You can run each cell separately by hitting "Shift-enter". Do not leave out any cell and don't forget to run the first code cells for the setup.
 
-  * Chapter 1: Gaining First Insights from Textual Data
+  * **Chapter 1: Gaining First Insights from Textual Data**
   [[git](ch01/First_Insights.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
-* Chapter 12: Building a Knowledge Graph
+* **Chapter 12: Building a Knowledge Graph**
   [[git](ch12/Knowledge_Graph.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
