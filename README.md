@@ -34,7 +34,7 @@ For each chapter of the book we provide three links:
   * "nbviewer" opens the notebook for viewing on nbviewer.ipython.org
   * "colab" opens a runnable copy on Google's Colab service.
 
-You can run each cell separately by hitting "Shift-enter". Do not leave out any cell and don't forget to run the first code cells for the setup.
+If you ron the notebook locally or on Colab, you can execute each cell separately by hitting "Shift-enter". Do not skip cells and don't forget to run the first code cells for the setup.
 
   * **Chapter 1: Gaining First Insights from Textual Data**
   [[git](ch01/First_Insights.ipynb)]
