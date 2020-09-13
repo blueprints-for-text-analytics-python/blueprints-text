@@ -44,7 +44,7 @@ You can run each cell separately by hitting "Shift-enter". Do not leave out any 
   [[git](ch12/Knowledge_Graph.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
-
+asdf
 
 ## Local Setup
 
