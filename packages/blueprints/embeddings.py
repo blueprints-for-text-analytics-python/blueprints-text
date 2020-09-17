@@ -90,7 +90,7 @@ def plot_embeddings(model, search=[], topn=0, show_all=False, train_all=False,
         fig.update_xaxes(showticklabels=False, showgrid=True, title='', zeroline=False, visible=True)
         fig.update_yaxes(showticklabels=False, showgrid=True, title='', zeroline=False, visible=True)
     else:
-        params.update({'width': 900, 'height': 600})
+        params.update({'width': 900, 'height': 700})
         df['z'] = df['z']*2/3 # scale 3d box
         fig = px.scatter_3d(df, x="x", y="y", z="z", opacity=0.5, **params)
         fig.update_layout(scene = dict(xaxis = go.layout.scene.XAxis(title = '', showticklabels=False),

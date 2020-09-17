@@ -1,0 +1,9 @@
+pandas>=1.1.0
+scikit-learn>=0.23.2
+matplotlib>=3.3.1
+seaborn==0.10.1
+plotly_express==0.4.1
+umap-learn
+spacy==2.3.2
+textacy==0.10.1
+gensim==3.8.3
