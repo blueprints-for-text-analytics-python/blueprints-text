@@ -48,7 +48,7 @@ If you ron the notebook locally or on Colab, you can execute each cell separatel
   * **Chapter 7: yet to come**
   * **Chapter 8: yet to come**
   * **Chapter 9: yet to come**
-  * **Chapter 10: yet to come**
+  * **Chapter 10: Exploring Semantic Relationships with Word Embeddings**
   [[git](ch10/Embeddings.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch10/Embeddings.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch10/Embeddings.ipynb)]
