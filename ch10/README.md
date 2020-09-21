@@ -1,8 +1,8 @@
 # Chapter 10: Exploring Semantic Relationships with Word Embeddings
 
-## of [Blueprints for Text Analysis Using Python](..)
+## [Blueprints for Text Analysis Using Python](https://github.com/blueprints-for-text-analytics-python/blueprints-text)
 
-[Notebook](Embbeddings.ipynb)
+[Jupyter Notebook](Embbeddings.ipynb)
 
 ![Figure 10.3: 2d-UMAP projections of all word embeddings](figures/umap_all.jpg)
 
