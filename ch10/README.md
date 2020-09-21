@@ -4,7 +4,10 @@
 
 [Jupyter Notebook](Embbeddings.ipynb)
 
-![Figure 10.3: 2d-UMAP projections of all word embeddings](figures/umap_all.jpg)
+## Images
+
+Figure 10.3: 2d-UMAP projections of all word embeddings
+![](figures/umap_all.jpg)
 
 ![Figure 10.4: 2d-UMAP projections of selected keywords](figures/umap_selected_2d.jpg)
 
