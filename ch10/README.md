@@ -2,7 +2,7 @@
 
 ## [Blueprints for Text Analysis Using Python](https://github.com/blueprints-for-text-analytics-python/blueprints-text)
 
-[Jupyter Notebook](Embbeddings.ipynb)
+[Jupyter Notebook](Embeddings.ipynb)
 
 ## Figures
 
