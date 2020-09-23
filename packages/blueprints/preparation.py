@@ -1,5 +1,8 @@
 import re
 import html
+import pandas as pd
+import spacy    
+from spacy.tokens import Token, Span
 
 def clean(text):
     # convert html escapes like &amp; to characters.
@@ -19,10 +22,6 @@ def clean(text):
     return text.strip()
     
 
-import spacy    
-from spacy.tokens import Token, Span
-import pandas as pd
-
 def display_nlp(doc, include_punct=False):
     """Generate data frame for visualization of spaCy tokens."""
     rows = []
@@ -30,10 +29,10 @@ def display_nlp(doc, include_punct=False):
         if not t.is_punct or include_punct:
             row = {'token': i,  'text': t.text, 'lemma_': t.lemma_, 
                    'is_stop': t.is_stop, 'is_alpha': t.is_alpha,
-                   'pos_': t.pos_, 'dep_': t.dep_, 'ent_type_': t.ent_type_}
+                   'pos_': t.pos_, 'dep_': t.dep_, 
+                   'ent_type_': t.ent_type_, 'ent_iob_': t.ent_iob_}
             rows.append(row)
     
     df = pd.DataFrame(rows).set_index('token')
     df.index.name = None
     return df
-
