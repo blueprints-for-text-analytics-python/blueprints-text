@@ -15,7 +15,7 @@ if ON_COLAB:
         'settings.py',
         'packages/blueprints/__init__.py',
         'packages/blueprints/embeddings.py',
-        'ch10/reddit-selfposts.db',
+        'data/reddit-selfposts/reddit-selfposts.db',
         'ch10/requirements.txt'
     ]
 
