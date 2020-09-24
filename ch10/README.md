@@ -2,9 +2,10 @@
 
 ## [Blueprints for Text Analysis Using Python](https://github.com/blueprints-for-text-analytics-python/blueprints-text)
 
-  [[Jupyter Notebook](Embeddings.ipynb)]
-  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch10/Embeddings.ipynb)]
-  [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch10/Embeddings.ipynb)]
+View Jupyter notebook on 
+[[Github](Embeddings.ipynb)] or
+[[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch10/Embeddings.ipynb)] or run it on
+[[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch10/Embeddings.ipynb)].
 
 ## Figures
 
