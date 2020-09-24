@@ -22,6 +22,6 @@ Figure 10-5. 3d-UMAP projections of selected keywords
 Figure 10-7. Similarity tree of words most similar to “noise” their most similar words
 ![](figures/sim_tree_noise.png)
 
-Figure 10.8. Similarity tree of words most similar to “spark-plug” their most similar words
+Figure 10-8. Similarity tree of words most similar to “spark-plug” their most similar words
 ![](figures/sim_tree_plug.png)
 
