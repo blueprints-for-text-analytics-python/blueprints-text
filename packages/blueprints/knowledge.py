@@ -1,7 +1,6 @@
 import pandas as pd
 import spacy
 from spacy.tokens import Span
-from spacy.symbols import DET, PART
 
 def display_ner(doc, include_punct=False):
     """Generate data frame for visualization of spaCy doc with custom attributes."""
@@ -22,9 +21,9 @@ def display_ner(doc, include_punct=False):
                 else:
                     row['in_coref'] = None
                     row['main_coref'] = None
-            if t.has_extension('ref_n'): # name_coref attribute
+            if t.has_extension('ref_n'): # referent attribute
                 row['ref_n'] = t._.ref_n
-                row['ref_t'] = t._.ref_t_
+                row['ref_t'] = t._.ref_t
             if t.has_extension('ref_ent'): # ref_n/ref_t
                 row['ref_ent'] = t._.ref_ent
             rows.append(row)

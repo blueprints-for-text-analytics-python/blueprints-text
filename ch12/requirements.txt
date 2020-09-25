@@ -1,0 +1,4 @@
+spacy==2.3.2
+textacy==0.10.1
+sparqlwrapper
+git+https://github.com/huggingface/neuralcoref.git
