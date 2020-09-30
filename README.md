@@ -42,7 +42,10 @@ If you ron the notebook locally or on Colab, you can execute each cell separatel
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
   * **Chapter 2: yet to come**
   * **Chapter 3: yet to come**
-  * **Chapter 4: yet to come**
+  * **Chapter 4: Preparing Textual Data For Statistics and Machine Learning**
+  [[git](ch04/Data_Preparation.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch04/Data_Preparation.ipynb)]
+  [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch04/Data_Preparation.ipynb)]
   * **Chapter 5: yet to come**
   * **Chapter 6: yet to come**
   * **Chapter 7: yet to come**
