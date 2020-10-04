@@ -24,7 +24,7 @@ Below you find the links to view the notebooks here on Github or execute them di
 
 ## Problems and Erros
 
-If you discover any problems or have recommendations how to improve the code, do not hesitate to [create an issue here in the repository](https://github.com/blueprints-for-text-analytics-python/blueprints-text/issues).
+If you discover any problems or have recommendations on how to improve the code, do not hesitate to [create an issue here in the repository](https://github.com/blueprints-for-text-analytics-python/blueprints-text/issues).
 
 For errors in the book text, please use [O'Reilly's errata page](https://www.oreilly.com/catalog/errata.csp?isbn=0636920309222).
 
