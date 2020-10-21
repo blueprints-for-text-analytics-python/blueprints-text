@@ -40,7 +40,8 @@ if ON_COLAB:
     setup_cmds = [
         f'pip install -r ch12/requirements.txt',
         'mkdir -p figures',
-        'python -m spacy download en_core_web_sm'
+        'python -m spacy download en_core_web_sm',
+        'python -m spacy download en_core_web_lg'
     ]
 
     for cmd in setup_cmds:
