@@ -5,7 +5,8 @@
 View Jupyter notebook on 
 [[Github](Knowledge_Graph.ipynb)] or
 [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_graph.ipynb)] or run it on
-[[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_graph.ipynb)].
+[[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_graph.ipynb)].  
+[[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
 
 ## Figures
 
