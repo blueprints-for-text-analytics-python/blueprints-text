@@ -14,6 +14,7 @@ if ON_COLAB:
     required_files = [
         'settings.py',
         'data/jdt-bugs-dataset/eclipse_jdt.csv.gz',
+	'packages/blueprints/preparation.py'
     ]
 
     print("Downloading required files ...")
