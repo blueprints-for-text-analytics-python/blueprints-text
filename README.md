@@ -22,7 +22,7 @@ This repository contains the code examples of our O'Reilly book. You will find a
 
 Below you find the links to view the notebooks here on Github or execute them directly on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb#). In the section thereafter you will find instructions to setup the environment on your local computer.
 
-## Problems and Erros
+## Problems and Errors
 
 If you discover any problems or have recommendations on how to improve the code, do not hesitate to [create an issue here in the repository](https://github.com/blueprints-for-text-analytics-python/blueprints-text/issues).
 
