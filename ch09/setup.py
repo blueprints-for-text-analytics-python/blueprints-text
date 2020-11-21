@@ -39,7 +39,9 @@ if ON_COLAB:
 
     print("\nAdditional setup ...")
     setup_cmds = [
-        'pip install -r ch09/requirements.txt'
+        'pip install -r ch09/requirements.txt',
+	'python -m spacy download en',
+	'python -m nltk.downloader punkt'
     ]
 
     for cmd in setup_cmds:
@@ -51,7 +53,8 @@ elif False: # change to True to let this run
     print("\nAdditional setup (may take a few minutes) ...")
     setup_cmds = [
         'pip install -r requirements.txt',
-	'python -m spacy download en'
+	'python -m spacy download en',
+	'python -m nltk.downloader punkt'
     ]
 
     for cmd in setup_cmds:
