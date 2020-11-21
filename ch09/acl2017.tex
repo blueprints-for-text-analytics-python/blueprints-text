@@ -1,0 +1,449 @@
+%
+% File acl2017.tex
+%
+%% Based on the style files for ACL-2015, with some improvements
+%%  taken from the NAACL-2016 style
+%% Based on the style files for ACL-2014, which were, in turn,
+%% based on ACL-2013, ACL-2012, ACL-2011, ACL-2010, ACL-IJCNLP-2009,
+%% EACL-2009, IJCNLP-2008...
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[hyperref]{acl2017}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{enumitem}
+
+%\usepackage{url}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% ===========================================
+% Added preamble
+% ===========================================
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{color}
+\graphicspath{ {Images/} }
+
+\aclfinalcopy % Uncomment this line for the final submission
+%\def\aclpaperid{***} %  Enter the acl Paper ID here
+
+%\setlength\titlebox{5cm}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+\newcommand\BibTeX{B{\sc ib}\TeX}
+
+\title{A Supervised Approach to Extractive Summarisation of Scientific Papers}
+
+\author{Ed Collins \and Isabelle Augenstein \and Sebastian Riedel \\
+  Department of Computer Science,\\ University College London (UCL), UK \\
+  {\tt \{edward.collins.13|i.augenstein|s.riedel\}@ucl.ac.uk}}
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Automatic summarisation is a popular approach to reduce a document to its main arguments. Recent research in the area has focused on neural approaches to summarisation, which can be very data-hungry. However, few large datasets exist and none for the traditionally popular domain of scientific publications, which opens up challenging research avenues centered on encoding large, complex documents. In this paper, we introduce a new dataset for summarisation of computer science publications by exploiting a large resource of author provided summaries and show straightforward ways of extending it further. We develop models on the dataset making use of both neural sentence encoding and traditionally used summarisation features and show that models which encode sentences as well as their local and global context perform best, significantly outperforming well-established baseline methods. %as well as positional information achieve the highest accuracy and ROUGE scores. %which echo state-of-the-art techniques in news summarisation, 
+\end{abstract}
+
+\section{Introduction}
+
+Automatic summarisation is the task of reducing a document to its main points. There are two streams of summarisation approaches: \textit{extractive summarisation}, which copies parts of a document (often whole sentences) to form a summary, and \textit{abstractive summarisation}, which reads a document and then generates a summary from it, which can contain phrases not appearing in the document.
+Abstractive summarisation is the more difficult task, but useful for domains where sentences taken out of context are not a good basis for forming a grammatical and coherent summary, like novels.
+
+Here, we are concerned with summarising scientific publications. Since scientific publications are a technical domain with fairly regular and explicit language, we opt for the task of \textit{extractive summarisation}. Although there has been work on summarisation of scientific publications before, existing datasets are very small, consisting of tens of documents~\cite{kupiec1995trainable,Visser2009}. 
+Such small datasets are not sufficient to learn supervised summarisation models relying on neural methods for sentence and document encoding, usually trained on many thousands of documents~\cite{rush-chopra-weston:2015:EMNLP,cheng-lapata:2016:P16-1,chopra-auli-rush:2016:N16-1,see2017get}.
+
+In this paper, we introduce a dataset for automatic summarisation of computer science publications which can be used for both abstractive and extractive summarisation. It consists of more than 10k documents and can easily be extended automatically to an additional 26 domains. The dataset is created by exploiting an existing resource, ScienceDirect,\footnote{\url{http://www.sciencedirect.com/}} where many journals require authors to submit highlight statements along with their manuscripts. Using such highlight statements as gold statements has been proven a good gold standard for news documents~\cite{nallapati2016summarunner}.
+This new dataset offers many exciting research challenges, such how best to encode very large technical documents, which are largely ignored by current research.
+
+\setlength{\tabcolsep}{0.3em}
+\begin{table}[t]
+\fontsize{8}{8}\selectfont
+\begin{center}
+\begin{tabularx}{\linewidth}{X}
+\toprule
+\textbf{Paper Title} Statistical estimation of the names of HTTPS servers with domain name graphs \\ \midrule
+\textbf{Highlights} we present the domain name graph (DNG), which is a formal expression that can keep track of cname chains and characterize the dynamic and diverse nature of DNS mechanisms and deployments. We develop a framework called service-flow map (sfmap) that works on top of the DNG.sfmap estimates the hostname of an HTTPS server when given a pair of client and server IP addresses. It can statistically estimate the hostname even when associating DNS queries are unobserved due to caching mechanisms, etc through extensive analysis using real packet traces, we demonstrate that the sfmap framework establishes good estimation accuracies and can outperform the state-of-the art technique called dn-hunter. We also identify the optimized setting of the sfmap framework. The experiment results suggest that the success of the sfmap lies in the fact that it can complement incomplete DNS information by leveraging the graph structure. To cope with large-scale measurement data, we introduce techniques to make the sfmap framework scalable. We validate the effectiveness of the approach using large-scale traffic data collected at a gateway point of internet access links .\\ \midrule
+\textbf{Summary Statements Highlighted in Context from Section of Main Text}
+Contributions: in this work, we present a novel methodology that aims to infer the hostnames of HTTPS flows, given the three research challenges shown above. The key contributions of this work are summarized as follows. {\color{red} We present the domain name graph (DNG), which is a formal expression that can keep track of cname chains (challenge 1) and characterize the dynamic and diverse nature of DNS mechanisms and deployments (challenge 3). We develop a framework called service-flow map (sfmap) that works on top of the DNG. sfmap estimates the hostname of an https server when given a pair of client and server IP addresses.} It can statistically estimate the hostname even when associating DNS queries are unobserved due to caching mechanisms, etc (challenge 2). Through extensive analysis using real packet traces , we demonstrate that the sfmap framework establishes good estimation accuracies and can outperform the state-of-the art technique called dn-hunter, [2]. {\color{red} We also identify the optimized setting of the sfmap framework. The experiment results suggest that the success of the sfmap lies in the fact that it can complement incomplete DNS information by leveraging the graph structure. To cope with large-scale measurement data, we introduce techniques to make the sfmap framework scalable. We validate the effectiveness of the approach using large-scale traffic data collected at a gateway point of internet access links.} The remainder of this paper is organized as follows: section2 summarizes the related work. [...]\\
+\bottomrule
+\end{tabularx}
+\end{center}
+\caption{\label{fig:summ_ex} An example of a document with summary statements highlighted in context.
+}
+\end{table}
+
+In more detail, our contributions are as follows:
+\begin{itemize}[noitemsep]
+\item{We introduce a new dataset for summarisation of scientific publications consisting of over 10k documents}
+\item{Following the approach of \cite{hermann2015teaching} in the news domain, we introduce a method, \textit{HighlightROUGE}, which can be used to automatically extend this dataset %extractive summarisation datasets% 
+and show empirically that this improves summarisation performance}
+\item{Taking inspiration from previous work in summarising scientific literature \citep{kupiec1995trainable, papers_citationSaggion2016}, we introduce a 
+%further 
+metric we use as a feature, \textit{AbstractROUGE}, which can be used to extract summaries by exploiting the abstract of a paper}
+\item{We benchmark several neural as well traditional summarisation methods on the dataset and use simple features to model the global context of a summary statement, which contribute most to the overall score}
+\item{We compare our best performing system to several well-established baseline methods, some of which use more elaborate methods to model the global context than we do, and show that our best performing model outperforms them on this extractive summarisation task by a considerable margin}
+\item{We analyse to what degree different sections in scientific papers contribute to a summary}
+\end{itemize}
+We expect the research documented in this paper to be relevant beyond the document summarisation community, for other tasks in the space of automatically understand scientific publications, such as keyphrase extraction~\cite{kim-EtAl:2010:SemEval,sterckx2016supervised,augenstein2017scienceie,augenstein2017multitask}, semantic relation extraction~\cite{gupta-manning:2011:IJCNLP-2011,marsi-ozturk:2015:EMNLP} or topic classification of scientific articles~\cite{oseaghdha-teufel:2014:Coling}.
+
+
+\section{Dataset and Problem Formulation}
+
+
+\setlength{\tabcolsep}{0.3em}
+\begin{table}[t]
+\fontsize{10}{12}\selectfont
+\begin{center}
+\begin{tabular}{l c c c}
+\toprule
+& \bf \#documents & \bf \#instances \\
+\midrule
+CSPubSum Train & 10148 & 85490 \\ % 42745 <-- number of positive instances
+CSPubSumExt Train & 10148 & 263440 \\
+CSPubSum Test & 150 & N/A \\ % 625
+CSPubSumExt Test & 10148 & 131720 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{\label{tab:Dataset} The CSPubSum and CSPubSumExt datasets as described in Section~\ref{sec:training_data}. Instances are items of training data.
+%Instances are sentences with a positive or negative label that can be used for training. CSPubSumExt is the dataset extended with HighlightROUGE.
+}
+\end{table}
+
+We release a novel dataset for extractive summarisation comprised of $10 148$ Computer Science publications.\footnote{The dataset along with the code is available here: \url{https://github.com/EdCo95/scientific-paper-summarisation}} Publications were obtained from ScienceDirect, where publications are grouped into 27 domains, Computer Science being one of them. As such, the dataset could easily be extended to more domains. %The dataset is automatically created, using methods outlined below, and such could be easily extended to span all 27 domains. % in XML format.
+An example document is shown in Table \ref{fig:summ_ex}.
+Each paper in this dataset is guaranteed to have a title, abstract, author written highlight statements and author defined keywords. The highlight statements are sentences that should effectively convey the main takeaway of each paper and are a good gold summary, while the keyphrases are the key topics of the paper.
+Both abstract and highlights can be thought of as a summary of a paper. Since highlight statements, unlike sentences in the abstract, generally do not have dependencies between them, we opt to use those as gold summary statements for developing our summarisation models, following \newcite{hermann2015teaching,nallapati2016abstractive} in their approaches to news summarisation.
+%The highlights make better targets for extractive summarisation than the abstract because they do not have as much dependency between sentences, and we use them as gold summaries in this work.
+
+\subsection{Problem Formulation}
+
+As shown by \newcite{Cao2015}, sentences can be good summaries even when taken out of the context of the surrounding sentences. Most of the highlights have this characteristic, not relying on any previous or subsequent sentences to make sense. Consequently, we frame the extractive summarisation task here as a binary sentence classification task, where we assign each sentence in a document a label $y \in {0,1}$. Our training data is therefore a list of sentences, sentence features to encode context and a label all stored in a randomly ordered list.
+ 
+
+\subsection{Creation of the Training and Testing Data}
+\label{sec:training_data}
+%In order to compare the performance of the different summarisation architectures developed in this research, a training set and two testing sets were extracted from the $10148$ papers. 
+%As detailed by \newcite{Cao2015}, sentences can be good summaries even when taken out of context of the surrounding sentences. Most of the Highlights have this characteristic, not relying on any previous or subsequent sentences to make sense, which are exactly the type of sentences we wish to extract in this task.
+
+We used the 10k papers to create two different datasets: \textit{CSPubSum} and \textit{CSPubSumExt} where CSPubSumExt is CSPubSum extended with HighlightROUGE. The number of training items for each is given in Table~\ref{tab:Dataset}.
+
+\paragraph{CSPubSum} This dataset's positive examples are the highlight statements of each paper. There are an equal number of negative examples which are sampled randomly from the bottom 10\% of sentences which are the worst summaries for their paper, measured with ROUGE-L (see below), resulting in $85490$ training instances. CSPubSum Test is formed of 150 full papers rather than a randomly ordered list of training sentences. These are used to measure the summary quality of each summariser, not the accuracy of the trained models.
+
+%This consists of highlight statements as the positive samples for each document. In order to obtain negative samples, we measure how similar each sentence in a publication is to its highlight statements with the ROUGE-L score \cite{Lin2004}, which we also use as an evaluation metric. It scores summaries between 0 and 1 based on their longest common subsequence with the gold summary. A score of 1 indicates they are the same sentence. From the bottom 10\% of sentences in a publication which are the least similar to its highlights, measured with ROUGE-L, we draw an equal number of negative samples to the positive samples. This results in 43k instances, for which the majority were used for \textit{CSPubSum Train} and 150 documents with a total of 625 highlights were held out for \textit{CSPubSum Test}.
+
+\paragraph{CSPubSumExt} The CSPubSum dataset has two drawbacks: 1) it is an order of magnitude behind comparable large summarisation datasets~\cite{hermann2015teaching,nallapati2016abstractive}; 2) it does not have labels for sentences in the context of the main body of the paper. We generate additional training examples for each paper with \textit{HighlightROUGE} (see next section), which finds sentences that are similar to the highlights. This results in 263k instances for CSPubSumExt Train and 132k instances for CSPubSumExt Test. CSPubSumExt Test is used to test the accuracy of trained models. The trained models are then used in summarisers whose quality is tested on CSPubSum Test with the ROUGE-L metric (see below).
+
+%We therefore created a training set of approximately 300K randomly ordered sentences with this characteristic.
+
+%Initially we thought to create the training data using just the highlight statements as positive training examples; however there are two problems with this: firstly, this would only have given a training set size of $<100000$ samples which may not be enough for deep learning algorithms; secondly, we wanted to capture in the data the concept of certain sections of the paper being more relevant to summaries than others, which required positive examples from sections other than the highlights. We therefore developed a method called \textit{HighlightROUGE} (see Section \ref{sec:highlight_rouge}) which could generate additional training data for summarisers.
+
+%Approximately 300K training sentences resulted from using HighlightROUGE and were split into training ($\frac{2}{3}$ data, named CSPubSumExt Train) and testing sets ($\frac{1}{3}$ data, named SL Test Data). 
+
+%A second testing set was constructed from 150 full papers (named ROUGE Test Data), which summaries were generated for using each model and compared to the gold with ROUGE-L. Models which were highly accurate on the SL Test Data were not necessarily the best summarisers so two testing sets were needed to measure this discrepancy.
+
+
+
+\section{ROUGE Metrics}\label{sec:ROUGE}
+
+ROUGE metrics are evaluation metrics for summarisation which correspond well to human judgements of good summaries \citep{Lin2004}. We elect to use ROUGE-L, inline with other research into summarisation of scientific articles \citep{used_rouge_l_Cohan2015, dataJaidka2016}.
+
+%\subsection{ROUGE}
+%ROUGE is an automatic evaluation metric for summarisation tasks, which is a good measure of the quality of a summary \citep{Lin2004}. ROUGE compares generated summaries to human written summaries using various different techniques described in \citep{Lin2004}. The metric used in this work is ROUGE-L, which scores summaries between 0 and 1 based on their longest common subsequence with the gold summary. A score of 1 indicates they are the same sentence. ROUGE-L was chosen because some of the highlights of papers are sentences which the authors extracted from within the paper itself - so represent the ideal goal in extractive summarisation. By using ROUGE-L, any summarisation system would achieve a higher score if it could find these same highlights within the paper.
+
+\subsection{HighlightROUGE}
+\label{sec:highlight_rouge}
+HighlightROUGE is a method %developed in this work
+used to generate additional training data for this dataset, using a similar approach to \cite{hermann2015teaching}. As input it takes a gold summary and body of text
+%, and works as follows: we know that in every paper there is a set of sentences which create the best possible summary for that paper. Our space of possible summaries is limited because we can only take sentences from within the article itself. 
+%We can therefore create a larger training set of data by finding 
+and finds the sentences within that text which give the best ROUGE-L 
+%(or other metric) 
+score in relation to the highlights, like an oracle summariser would do. These sentences represent the ideal sentences to extract from each paper for an extractive summary.
+
+%Formally, the ideal summary for each paper is:
+
+%$$
+%S_o = \underset{S=\{s_1, s_2, ..., s_n\}}{\arg\max} \left[ \frac{1}{n} \sum_{s_i \in S} \text{ROUGE-L}(s_i, %gold) \right]
+%$$
+
+%Where $S_o$ is the summary that would be generated by an oracle, and $n$ is the number of sentences in the summary. This problem can be easily solved by simply computing the ROUGE-L score between every sentence in the paper and the summary, sorting by score and taking the top-$n$ sentences. We set $n=10$ in this work to generate an additional $101480$ positive sentence-label pairs to use as training data. Negative examples are randomly sampled from sentences with the lowest 10\% of ROUGE-L scores.
+
+%(arbitrarily chosen number which would give enough data for deep learning)
+We select the top 20 sentences which give the highest ROUGE-L score with the highlights for each paper as positive instances and combine these with the highlights to give the positive examples for each paper. An equal number of negative instances are sampled from the lowest scored sentences to match.
+
+When generating data using HighlightROUGE, no sentences from the abstracts of any papers were included as training examples. This is because the abstract is already a summary% and extracting its sentences to summarise the highlights is pointless when a reader could just read the abstract
+; our goal is to extract salient sentences from the main paper to supplement the abstract, not from the preexisting summary. 
+
+
+\subsection{AbstractROUGE}
+\label{sec:abs_rouge}
+AbstractROUGE is used as a feature for summarisation. It is a metric presented by this work which exploits the known structure of a paper by making use of the abstract, a preexisting summary. %Since we know that every paper has an abstract, it makes sense to exploit the existing summary. 
+The idea of AbstractROUGE is that sentences which are good summaries of the abstract are also likely to be good summaries of the highlights. The AbstractROUGE score of a sentence is simply the ROUGE-L score of that sentence and the abstract. The intuition of comparing sentences to the abstract is one often used in summarising scientific literature, e.g. \cite{papers_citationSaggion2016, kupiec1995trainable}, however these authors generally encode sentences and abstract as TF-IDF vectors, then compare them, rather than directly comparing them with an evaluation metric. While this may seem somewhat like cheating, all scientific papers are guaranteed to have an abstract so it makes sense to exploit it as much as possible. %The ROUGE score tells us how good-a summary a sentence is for the abstract. 
+% The ROUGE-L measure could of course be replaced or added to with other evaluation metrics to create more features.
+%As we use the AbstractROUGE metric as a feature, we could not include sentences from the abstract in the training data as their AbstractROUGE score would be 1. This would bias the data unfairly given that abstract sentences are not in the set of sentences which could form a summary.
+
+%\subsection{Other Evaluation Metrics}
+%While ROUGE-L was used exclusively in this work, all techniques described could equally be applied with any other evaluation metric or combination thereof. For example, \citep{Lin2004} describe several other ROUGE metrics. Some authors have claimed that ROUGE is not a suitable metric for scientific article summaristion, claiming that it is unreliable \citep{Cohan2016}. From inspection of generated summaries, we did not find the ROUGE-L metric to be an inaccurate measure of the quality of summaries; however future work may wish to experiment with other evaluation metrics, such as SERA proposed by Cohan et al. \citeyearpar{Cohan2016}.
+
+\section{Method}
+
+
+
+%We make extensive use of word embeddings created using the W
+%. The word embedding model was trained on the corpus of papers and represented words as 100-dimensional vectors. For training we used a minimum word count of 5, context window of 20 words and downsample setting of 0.001. 
+%Sentences could then be represented by averaging the word vectors of that sentence. These word embeddings were also used as input to a Recurrent Neural Network (RNN) used in the final model which was capable of producing a better sentence encoding for summarisation by reading the sentence in order.
+
+% Word embeddings are obtained by training a word2Vec skip-gram model \citep{Mikolov2013} on the CSPubSum Train dataset\footnote{100-dimensional vectors, minimum word count of 5, context window of 20 words and downsample setting of 0.001}.
+
+We encode each sentence in two different ways: as their mean averaged word embeddings and as their Recurrent Neural Network (RNN) encoding.
+%\newcite{recursiveaeSocher2011} propose encoding sentences by summing word vectors and using a recursive autoencoder. They find that simple addition significantly outperformed the complex autoencoder. We choose to test a different simple/complex method pair: vector averaging and RNN encoding.
+
+\subsection{Summariser Features}
+\label{sec:handcrafted_feats}
+ As the sentences in our dataset are randomly ordered, there is no readily available context for each sentence from surrounding sentences (taking this into account is a potential future development). To provide local and global context, a set of 8 features are used for each sentence which are described below. These contextual features contribute to achieving the best performances. Some recent work in summarisation uses as many as 30 features \citep{modernfeaturesDlikman2016, modernfeaturesLitvak2016}. We choose only a minimal set of features to focus more on learning from raw data than on feature engineering, although this could potentially further improve results.
+
+\paragraph{AbstractROUGE}
+A new metric presented by this work, described in Section \ref{sec:abs_rouge}.
+
+\paragraph{Location}
+Authors such as \newcite{papersKavila2015} only chose summary sentences from the Abstract, Introduction or Conclusion, thinking these more salient to summaries; and we show that certain sections within a paper are more relevant to summaries than others (see Section~\ref{sec:finding_relevant_section}). Therefore we assign sentences an integer location for 7 different sections: Highlight, Abstract, Introduction, Results / Discussion / Analysis, Method, Conclusion, all else.\footnote{based on a small manually created gazetteer of alternative names} Location features have been used in other ways in previous work on summarising scientific literature; \newcite{Visser2009} extract sentence location features based on the headings they occurred beneath while \newcite{Teufel2002} divide the paper into 20 equal parts and assign each sentence a location based on which segment it occurred in - an attempt to capture distinct zones of the paper. %They also exploit section structure, noting that sentences toward the start of a section tend to have a summarising function.
+
+\paragraph{Numeric Count}
+is the number of numbers in a sentence, based on the intuition that sentences containing heavy maths are unlikely to be good summaries when taken out of context.
+
+\paragraph{Title Score}
+In \newcite{Visser2009} and \newcite{Teufel2002}'s work on summarising scientific papers, one of the features used is Title Score. Our feature differs slightly from \newcite{Visser2009} in that we only use the main paper title whereas \newcite{Visser2009} use all section headings. To calculate this feature, the non-stopwords that each sentence contains which overlap with the title of the paper are counted. %As the title has a very high salience with regard to the gold summary, this is a good measure of a sentence's likely utility as a summary.
+
+\paragraph{Keyphrase Score}
+Authors such as \newcite{SparckJones2007} refer to the keyphrase score as a useful summarisation feature. The feature uses author defined keywords and counts how many of these keywords a sentence contains, the idea being that important sentences will contain more keywords.
+
+\paragraph{TF-IDF}
+Term Frequency, Inverse Document Frequency (TF-IDF) is a measure of how relevant a word is to a document \citep{Ramos2003}. It takes into account the frequency of a word in the current document and the frequency of that word in a background corpus of documents; if a word is frequent in a document but infrequent in a corpus it is likely to be important to that document. TF-IDF was calculated for each word in the sentence, and averaged over the sentence to give a TF-IDF score for the sentence. Stopwords were ignored.
+
+\paragraph{Document TF-IDF}
+Document TF-IDF calculates the same metric as TF-IDF, but uses the count of words in a sentence as the term frequency and count of words in the rest of the paper as the background corpus. This gives a representation of how important a word is in a sentence in relation to the rest of the document.
+
+\paragraph{Sentence Length}
+Teufel et al. \citeyearpar{Teufel2002} created a binary feature for if a sentence was longer than a threshold. We simply include the length of the sentence as a feature; an attempt to capture the intuition that short sentences are very unlikely to be good summaries because they cannot possibly convey as much information as longer sentences.
+
+\subsection{Summariser Architectures}
+\label{sec:summ_architectures}
+Models detailed in this section could take any combination of four possible inputs, and are named accordingly:
+\begin{itemize}
+\item{S: The sentence encoded with an RNN.}%raw sentence input in the form of a list of word vectors, one for each word in the sentence}
+\item{A: a vector representation of the abstract of a paper, created by averaging the word vectors of every non-stopword word in the abstract. Since an abstract is already a summary, this gives a good sense of relevance. It is another way of taking the abstract into consideration by using neural methods as opposed to a feature. A future development is to encode this with an RNN.}% A future development is to encode this with an RNN rather than average word vectors. Use of this stems from the idea of exploiting the structure of a scientific paper. We know that the abstract is already a summary, so forming a vector representation of it in some way and comparing it to sentence vectors may give a good sense of how relevant each sentence is to the paper.}
+\item{F: the 8 features listed in Section \ref{sec:handcrafted_feats}.}
+\item{Word2Vec: the sentence represented by taking the average of every non-stopword word vector in the sentence.}
+\end{itemize}
+Models containing ``Net'' use a neural network with one or multiple hidden layers. Models ending with ``Ens'' use an ensemble. All non-linearity functions are Rectified Linear Units (ReLUs), chosen for their faster training time and recent popularity \cite{Krizhevsky2012}.
+
+\paragraph{Single Feature Models}
+The simplest class of summarisers use a single feature from Section \ref{sec:handcrafted_feats} (Sentence Length, Numeric Count and Section are excluded due to lack of granularity when sorting by these).% The sentences are sorted in descending order by the feature being used and the top $n$ sentences taken as the summary, then sorted back into the order they appear in in the paper. Features Sentence Length, Numeric Count and Section are not used as single feature summarisers.
+
+\paragraph{Features Only: FNet} 
+\label{sec:fnet}
+A single layer neural net to classify each sentence based on all of the 8 features given in Section~\ref{sec:handcrafted_feats}. A future development is to try this with other classification algorithms.
+
+\paragraph{Word Vector Models: Word2Vec and Word2VecAF}
+Both single layer networks. Word2Vec takes as input the sentence represented as an averaged word vector of 100 numbers.\footnote{Word embeddings are obtained by training a Word2Vec skip-gram model on the 10000 papers with dimensionality 100, minimum word count 5, a context window of 20 words and downsample setting of 0.001} Word2VecAF takes the sentence average vector, abstract average vector and handcrafted features, giving a 208-dimensional vector for classification.
+
+\paragraph{LSTM-RNN Method: SNet}
+\label{sec:lstm}
+Takes as input the ordered words of the sentence represented as 100-dimensional vectors and feeds them through a bi-directional RNN with Long-Short Term Memory (LSTM, ~\newcite{Hochreiter1997}) cells, with 128 hidden units and dropout to prevent overfitting. Dropout probability was set to 0.5 which is thought to be near optimal for many tasks \citep{Srivastava2014}. Output from the forwards and backwards LSTMs is concatenated and projected into two classes.\footnote{The model is trained until loss convergence on a small dev set}
+
+\paragraph{LSTM and Features: SFNet}
+SFNet processes the sentence with an LSTM as in the previous paragraph and passes the output through a fully connected layer with dropout. The handcrafted features are treated as separate inputs to the network and are passed through a fully connected layer. The outputs of the LSTM and features hidden layer are then concatenated and projected into two classes.
+
+\paragraph{SAFNet}
+SAFNet, shown in Figure \ref{fig:summnet} is the most involved architecture presented in this paper, which further to SFNet also encodes the abstract. 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{{summariser_net}.png}
+\caption{SAFNet Architecture}
+\label{fig:summnet}
+\end{figure}
+
+\paragraph{Ensemble Methods: SAF+F and S+F Ensemblers} The two ensemble methods use a weighted average of the output of two different models:
+
+$$
+p_\text{summary} = \frac{S_1 (1 - C) + S_2 (1 + C)}{2}
+$$
+
+Where $S_1$ is the output of the first summariser, $S_2$ is the output of the second and $C$ is a hyperparameter. SAF+F Ensembler uses SAFNet as as $S_1$ and FNet as $S_2$. % because these models each had sets of papers which they performed better on. 
+S+F Ensembler uses SNet as $S_1$ and FNet as $S_2$.%, which is similar to SFNet except that S+F Ens uses a weighted average of the two outputs to decide on a classification and SFNet uses a learned projection matrix. Using a learned projection matrix is more sensitive to erroneous training data, whereas a hyperparameter can be tuned on the ROUGE Test Set to produce the best possible summary results.
+
+\section{Results and Analysis}
+
+
+\subsection{Most Relevant Sections to a Summary}
+\label{sec:finding_relevant_section}
+
+A straight-forward heuristic way of obtaining a summary automatically would be to identify which sections of a paper generally represent good summaries and take those sections as a summary of the paper. This is precisely what \newcite{papersKavila2015} do, constructing summaries only from the Abstract, Introduction and Conclusion. This approach works from the intuition that certain sections are more relevant to summaries.
+%In fact, when reading a scientific paper for the first time, people will often skim-read it first or read specific sections (e.g. \newcite{Infograp23:online}), because certain sections of papers are more relevant to gaining a quick, high-level understanding of a paper than others. %Evaluation metrics can be used to capture this intuition statistically by comparing the sentences of each section to gold summaries.
+
+To understand how much each section contributes to a gold summary, 
+%Specifically, for each paper we split the paper into its constituent sections and for each section, split the section text into sentences. We then 
+we compute the ROUGE-L score of each sentence compared to the gold summary and average sentence-level ROUGE-L scores by section. 
+%The scores for each sentence in the section are averaged to give a ROUGE score for each section. These sections scores are averaged across all $10 148$ papers.
+ROUGE-type metrics are not the only metrics which we can use to determine how relevant a sentence is to a summary. Throughout the data, there are approximately 2000 occurrences of authors directly copying sentences from within the main text to use as highlight statements. By recording from which sections of the paper these sentences came, we can determine from which sections authors most frequently copy sentences to the highlights, so may be the most relevant to a summary. This is referred to as the \textit{Copy/Paste Score} in this paper. 
+
+Figure~\ref{fig:rouge_by_section} shows the average ROUGE score for each section over all papers, and the normalised Copy/Paste score. %The ROUGE score shows which sections have the highest overlap with the gold summary, and the Copy/Paste score shows from which sections authors most often copied sentences directly into the highlights. 
+The title has the highest ROUGE score in relation to the gold summary, which is intuitive as the aim of a title is to convey information about the research in a single line. 
+%The abstract has the second highest ROUGE score which also makes sense because the abstract is already a summary itself. Conclusion takes third place, again making sense because it often summarises the achievements and message of the paper. 
+
+A surprising result is that the introduction has the third-lowest ROUGE score in relation to the highlights. Our hypothesis was that the introduction would be ranked highest after the abstract and title because it is designed to give the reader a basic background of the problem. Indeed, the introduction has the second highest Copy/Paste score of all sections. The reason the introduction has a low ROUGE score but high Copy/Paste score is likely due to its length. The introduction tends to be longer (average length of 72.1 sentences) than other sections, but still of a relatively simple level compared to the method (average length of 41.6 sentences), thus has more potential sentences for an author to use in highlights, giving the high Copy/Paste score. However it would also have more sentences which are not good summaries and thus reduce the overall average ROUGE score of the introduction. %Sections like the Method or Results can give important insights into how work was carried out or key observations, hence have a higher ROUGE score.
+
+Hence, although some sections are slightly more likely to contain good summary sentences, and assuming that we do not take summary sentences from the abstract which is already a summary, then Figure \ref{fig:rouge_by_section} suggests that there is no definitive section from which summary sentences should be extracted.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{{rouge_copy_paste_by_section}.png}
+\caption{Comparison of the average ROUGE scores for each section and the Normalised Copy/Paste score for each section, as detailed in Section \ref{sec:finding_relevant_section}. The wider bars in ascending order are the ROUGE scores for each section, and the thinner overlaid bars are the Copy/Paste count.}
+\label{fig:rouge_by_section}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{{model_comparison_baselines}.png}
+\caption{Comparison of the best performing model and several baselines by ROUGE-L score on CSPubSum Test.}
+\label{fig:model_comparison_baselines}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{{model_comparison_percent_oracle_and_accuracy}.png}
+\caption{Comparison of the accuracy of each model on CSPubSumExt Test and ROUGE-L score on CSPubSum Test. ROUGE Scores are given as a percentage of the Oracle Summariser score which is the highest score achievable for an extractive summariser on each of the papers. The wider bars in ascending order are the ROUGE scores. There is a statistically significant difference between the performance of the top four summarisers and the 5th highest scoring one (unpaired t-test, p=0.0139).}
+\label{fig:model_comparison}
+\end{figure} %There is a clear discrepancy between the two statistics, with a high performance on the SL Test Set not always implying high performance for actual summaries. 
+
+\subsection{Comparison of Model Performance and Error Analysis}
+Figure~\ref{fig:model_comparison_baselines} shows comparisons of the best model we developed to well-established external baseline methods. Our model can be seen to significantly outperform these methods, including graph-based methods which take account of global context: LexRank \citep{lexrankRadev2004} and TextRank \citep{textrankMihalcea2004}; probabilistic methods in KLSum (KL divergence summariser, \newcite{klsumHaghighi2009}); methods based on singular value decomposition with LSA (latent semantic analysis, \newcite{lsaSteinberger2004}); and simple methods based on counting in SumBasic \citep{sumbasicVanderwende2007}. This is an encouraging result showing that our methods that combine neural sentence encoding and simple features for representing the global context and positional information are very effective for modelling an extractive summarisation problem.
+
+Figure~\ref{fig:model_comparison} shows the performance of all models developed in this work measured in terms of accuracy and ROUGE-L on CSPubSumExt Test and CSPubSum Test, respectively. Architectures which use a combination of sentence encoding and additional features performed best by both measures. The LSTM encoding on its own outperforms models based on averaged word embeddings by 6.7\% accuracy and 2.1 ROUGE points. This shows that the ordering of words in a sentence clearly makes a difference in deciding if that sentence is a summary sentence. This is a particularly interesting result as it shows that encoding a sentence with an RNN is superior to simple arithmetic, and provides an alternative to the recursive autoencoder proposed by  \cite{recursiveaeSocher2011} which performed worse than vector addition.
+
+Another interesting result is that the highest accuracy on CSPubSumExt Test did not translate into the best ROUGE score on CSPubSum Test, although they are strongly correlated (Pearson correlation, R=$0.8738$). SAFNet achieved the highest accuracy on CSPubSumExt Test, however was worse than the AbstractROUGE Summariser on CSPubSum Test. This is most likely due to imperfections in the training data. A small fraction of sentences in the training data are mislabelled due to bad examples in the highlights which are exacerbated by the HighlightROUGE method. This leads to confusion for the summarisers capable of learning complex enough representations to classify the mislabelled data correctly. 
+
+We manually examined 100 sentences from CSPubSumExt which were incorrectly classified by SAFNet. Out of those, 37 are mislabelled examples.
+The primary cause of \textit{false positives} was lack of context (16 / 50 sentences) and long range dependency (10 / 50 sentences). Other important causes of false positives were mislabelled data (12 / 50 sentences) and a failure to recognise that mathematically intense sentences are not good summaries (7 / 50 sentences). Lack of context is when sentences require information from the sentences immediately before them to make sense. For example, the sentence ``The performance of such systems is commonly evaluated using the data in the matrix'' is classified as positive but does not make sense out of context as it is not clear what systems the sentence is referring to. %If the summariser had read the sentence before which describes what the "systems" are, it may have chosen that sentence as the summary instead.
+A long-range dependency is when sentences refer to an entity that is described elsewhere in the paper, e.g. sentences referring to figures. %They convey observations that are not useful unless we can see the figures. 
+These are more likely to be classified as summary statements when using models trained on automatically generated training data with HighlightROUGE, because they have a large overlap with the summary.% - HighlightROUGE fails to recognise the requirement of knowing what an entity is in order for the sentence to be a good summary, which is its main weaknesses.
+
+The primary cause of \textit{false negatives} was mislabelled data (25 / 50 sentences) and failure to recognise an entailment, observation or conclusion (20 / 50 sentences). Mislabelled data is usually caused by the presence of some sentences in the highlights which are of the form ``we set m=10 in this approach'', which are not clear without context. %which is labelled as positive because it is in the highlights, %HighlightROUGE, seeing sentences like this in the highlights, will label more sentences like this as positive in the data which is why many of the false negative sentences are mislabelled.
+Such sentences should only be labelled as positive if they are part of multi-line summaries, which is difficult to determine automatically.% in which context they would make sense in context; unfortunately there is no way to prevent this aside from manual curation.
+
+Failure to recognise an entailment, observation or conclusion is where a sentence has the form "entity X seems to have a very small effect on Y" for example, but the summariser has not learnt that this information is useful for a summary, possibly because it was occluded by mislabelled data.
+
+SAFNet and SFNet achieve high accuracy on the automatically generated CSPubSumExt Test dataset, though a lower ROUGE score than other simpler methods such as FNet on CSPubSum Test. This is likely due to overfitting, which our simpler summarisation models are less prone to.
+%this high performance may work against them. They learn a more complex representation of the training data than the other architectures, which may be causing overfitting and allows them to correctly classify the mislabelled data. Simpler summarisers like FNet do not learn to do this. Thus, although FNet has a lower accuracy in the SL Test Set, it performs better on the ROUGE Test Set because it does not overfit.
+One option to solve this would be to manually improve the CSPubSumExt labels, the other to change the form of the training data.
+%There are several options to solve this. The first is to manually curate the training data to remove these mislabelled examples which would be a time consuming operation, although we hypothesise that SAFNet would perform far better as a summariser if trained on such a purified training set. The second is to change the form of the training data. 
+Rather than using a randomised list of sentences and trying to learn objectively good summaries \cite{Cao2015}, each training example could be all the sentences in order from a paper, classified as either summary or not summary. The best summary sentences from within the paper would then be chosen using HighlightROUGE and used as training data, and an approach similar to \newcite{nallapati2016summarunner} could be used to read the whole paper sequentially and solve the issue of long-range dependencies and context.
+
+%by using an RNN to read each word in each sentence and using a second RNN to read each sentence in the paper. Doing so should allow learning of long-range dependencies. 
+
+%The final option is to allow multiline summaries. A system which could pick multiple line summaries to solve the context issue would likely perform very well, but would require training data of good multiline summaries which may need to be labelled by a human.
+
+The issue faced by SAFNet does not affect the ensemble methods so much as %they use the FNet classifier and SAFNet/LSTM with
+their predictions are weighted by a hyperparameter tuned with CSPubSum Test rather than CSPubSumExt. Ensemblers ensure good performance on both test sets as the two models are adapted to perform better on different examples.
+
+In summary, our model performances show that: reading a sentence sequentially is superior to averaging its word vectors, simple features that model global context and positional information are very effective and a high accuracy on an automatically generated test set does not guarantee a high ROUGE-L score on a gold test set, although they are correlated. This is most likely caused by models overfitting data that has a small but significant proportion of mislabelled examples as a byproduct of being generated automatically.
+
+\subsection{Effect of Using ROUGE-L to Generate More Data}
+This work used a method similar to \newcite{hermann2015teaching} to generate extra training data (Section \ref{sec:highlight_rouge}). Figure \ref{fig:model_comparison_low_data} compares three models trained on CSPubSumExt Train and the same models trained on CSPubSum Train (the feature of which section the example appeared in was removed to do this). The FNet summariser and SFNet suffer statistically significant ($p=0.0147$ and $p<0.0001$) drops in performance from using the unexpanded dataset, although interestingly SAFNet does not, suggesting it is a more stable model than the other two. These drops in performance however show that using the method we have described to increase the amount of available training data does improves model performance for summarisation.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{{model_comparison_low_data}.png}
+\caption{Comparison of the ROUGE scores of FNet, SAFNet and SFNet when trained on CSPubSumExt Train (bars on the left) and CSPubSum Train (bars on the right) and .}
+\label{fig:model_comparison_low_data}
+\end{figure} % The FNet classifier and SFNet perform significantly better when trained on the extended dataset.
+
+\subsection{Effect of the AbstractROUGE Metric on Summariser Performance}
+This work suggested use of the AbstractROUGE metric as a feature (Section \ref{sec:abs_rouge}). Figure \ref{fig:model_comparison_no_abs_rouge} compares the performance of 3 models trained with and without it. This shows two things: the AbstractROUGE metric does improve performance for summarisation techniques based only on feature engineering; and learning a representation of the sentence directly from the raw text as is done in SAFNet and SFNet as well as learning from features results in a far more stable model. This model is still able to make good predictions even if AbstractROUGE is not available for training, meaning the models need not rely on the presence of an abstract.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{{model_comparison_no_absrouge}.png}
+\caption{Comparison of ROUGE scores of the Features Only, SAFNet and SFNet models when trained with (bars on the left) and without (bars on the right) AbstractROUGE, evaluated on CSPubSum Test. The FNet classifier suffers a statistically significant (p=0.0279) decrease in performance without the AbstractROUGE metric.}
+\label{fig:model_comparison_no_abs_rouge}
+\end{figure} % SAFNet and SFNet remain fairly even in achieved scores without AbstractROUGE, but 
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=\linewidth]{{feature_weight_comparison_both}.png}
+%\caption{Comparison of the weights given to each of the features by a logistic regression classifier with and without the AbstractROUGE feature. A great deal of weight is given to the AbstractROUGE metric when it is present.}
+%\label{fig:feat_weight_comparison}
+%\end{figure}
+
+
+%\subsection{Feature Weightings}
+%Figure \ref{fig:feat_weight_comparison} shows weightings for each of the features for a logistic regression classifier which achieved an SL Test Set accuracy of 85.8\% (the FNet MLP classifer achieved 87\%), and the same classifier when the AbstractROUGE metric was not present (SL Test Set accuracy of 82.8\%). When AbstractROUGE is present, the classifier classifies almost exclusively based on it. When AbstractROUGE is not present the weights are far more equal in magnitude, however the final accuracy achieved is significantly lower. An interesting result is that for the classifier without AbstractROUGE, a negative weight is given to the TF-IDF score, meaning that a higher TF-IDF would make a sentence less likely to be classified as a summary. This is a strange occurrence as TF-IDF is often used on its own in information retrieval, with a higher score indicating a more relevant document \citep{Ramos2003}. It is most likely due to the presence of other features being stronger indicators of likelihood of being a summary. A strong positive weight is given to the title score, as expected for example. Another interesting observation is that a fairly high magnitude negative weight is given to Document TF-IDF for both classifiers. This is likely because words which occur frequently in a sentence and not in the whole document are quite likely to be mathematical terms which do not make for good summaries.
+
+\section{Related Work}
+
+\paragraph{Datasets}
+Datasets for extractive summarisation often emerged as part of evaluation campaigns for summarisation of news, organised by the Document Understanding Conference (DUC), and the Text Analysis Conference (TAC).
+DUC proposed single-document summarisation~\cite{harman2002duc}, whereas TAC datasets are for multi-document summarisation~\cite{dang2008overview,dang2009overview}. All of the datasets contain roughly 500 documents.
+
+%leading to the DUC-2002 dataset (600 documents, \newcite{harman2002duc}) and further ones in the following years. TAC then proposed multi-document summarisation of news in 2008~\cite{dang2008overview} and 2009~\cite{dang2009overview}, consisting of 480 and 440 documents respectively.
+
+The largest summarisation dataset (1 million documents) to date is the DailyMail/CNN dataset~\cite{hermann2015teaching}, first used for single-document abstractive summarisation by~\cite{nallapati2016abstractive}, enabling research on data-intensive sequence encoding methods.
+
+%A further dataset based on DailyMail articles, albeit smaller, was introduced by~\cite{cheng-lapata:2016:P16-1}, containing 567 training documents with 500 manually annotated testing documents. -- doesn't fit the narrative, probably not that important to mention separately as it's also small
+
+Existing datasets for summarisation of scientific documents of which we are aware are small. \newcite{kupiec1995trainable} used only 21 publications and CL-SciSumm 2017\footnote{\url{http://wing.comp.nus.edu.sg/cl-scisumm2017/}} contains 30 publications. \newcite{dataRonzano2016} used a set of 40 papers, \newcite{kupiec1995trainable} used 21 and \newcite{Visser2009} used only 9 papers. The largest known scientific paper dataset was used by \newcite{Teufel2002} who used a subset of 80 papers from a larger corpus of 260 articles.
+
+The dataset we introduce in this paper is, to our knowledge, the only large dataset for extractive summarisation of scientific publications. The size of the dataset enables training of data-intensive neural methods and also offers exciting research challenges centered around how to encode very large documents.
+
+
+\paragraph{Extractive Summarisation Methods}
+Early work on extractive summarisation focuses exclusively on easy to compute statistics, e.g. word frequency~\cite{luhn1958automatic}, location in the document~\cite{baxendale1958machine}, and TF-IDF~\cite{salton1996automatic}.
+Supervised learning methods which classify sentences in a document binarily as summary sentences or not soon became popular~\cite{kupiec1995trainable}. Exploration of more cues such as sentence position~\cite{yang-bao-nenkova:2017:EACLshort}, sentence length~\cite{radev2004mead}, words in the title, presence of proper nouns, word frequency \cite{nenkova2006compositional} and event cues~\cite{filatova2004event} followed.
+
+Recent approaches to extractive summarisation have mostly focused on neural approaches, based on bag of word embeddings approaches~\cite{kobayashi2015summarization,yogatama2015extractive} or encoding whole documents with CNNs and/or RNNs~\cite{cheng-lapata:2016:P16-1}. 
+
+In our setting, since the documents are very large, it is computationally challenging to read a whole publication with a (possibly hierarchical) neural sequence encoder. 
+In this work, we therefore opt to only encode the target sequence with an RNN and the global context with simpler features.
+We leave fully neural approaches to encoding publications to future work.
+
+
+\section{Conclusion}
+
+In this paper, we have introduced a new dataset for summarisation of computer science publications, which is substantially larger than comparable existing datasets, by exploiting an existing resource. We showed the performance of several extractive summarisation models on the dataset that encode sentences, global context and position, which significantly outperform well-established summarisation methods. We introduced a new metric, AbstractROUGE, which we show increases summarisation performance. Finally, we show how the dataset can be extended automatically, which further increases performance.
+Remaining challenges are to better model the global context of a summary statement and to better capture cross-sentence dependencies.
+
+\section*{Acknowledgments}
+
+This work was partly supported by Elsevier.
+
+%The acknowledgments should go immediately before the references.  Do not number the acknowledgments section. Do not include this section when submitting your paper for review.
+
+% include your own bib file like this:
+%\bibliographystyle{acl}
+%\bibliography{acl2017}
+\bibliography{acl2017}
+\bibliographystyle{acl_natbib}
+
+\appendix
+
+%\section{Supplemental Material}
+%\label{sec:supplemental}
+
+
+
+\end{document}
