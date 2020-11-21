@@ -1,0 +1,4 @@
+rouge_score==0.0.4
+wikipedia-api>=0.5.4
+sumy==0.8.1
+textdistance==4.2.0
