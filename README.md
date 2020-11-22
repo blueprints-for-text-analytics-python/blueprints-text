@@ -34,9 +34,9 @@ For each chapter of the book we provide three links:
 
   * "git" opens the notebook for viewing here on Github (sometimes not working because of [Github issue](https://github.com/jupyter/notebook/issues/3555))
   * "nbviewer" opens the notebook for viewing on nbviewer.ipython.org
-  * "colab" opens a runnable copy on Google's Colab service.
+  * "colab" opens a runnable copy on Google's Colab service
 
-If you ron the notebook locally or on Colab, you can execute each cell separately by hitting "Shift-enter". Do not skip cells and don't forget to run the first code cells for the setup.
+If you run the notebook locally or on Colab, you can execute each cell separately by hitting "Shift-enter". Do not skip cells and don't forget to run the first code cells for the setup.
 
   * **Chapter 1: Gaining First Insights from Textual Data**
   [[git](ch01/First_Insights.ipynb)]
