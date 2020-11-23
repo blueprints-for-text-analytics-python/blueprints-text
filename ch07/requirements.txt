@@ -1,3 +1,4 @@
+spacy
 lime
 eli5
 anchor-exp

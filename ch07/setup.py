@@ -28,7 +28,7 @@ if ON_COLAB:
     required_files = [
                   'settings.py',
                   _BUGS_FILE,
-                  'ch08/requirements.txt'
+                  'ch07/requirements.txt'
     ]
     print("Downloading required files ...")
     for file in required_files:
@@ -37,8 +37,8 @@ if ON_COLAB:
         os.system(cmd)
 
     print("\nAdditional setup ...")
-    setup_cmds = ['pip install -r ch08/requirements.txt',
-                  'python -m spacy download en']
+    setup_cmds = ['pip install -r ch07/requirements.txt',
+                  'python -m spacy download en_core_web_lg']]
 
     for cmd in setup_cmds:
         print('!'+cmd)
