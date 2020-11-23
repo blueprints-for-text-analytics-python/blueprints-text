@@ -38,7 +38,7 @@ if ON_COLAB:
 
     print("\nAdditional setup ...")
     setup_cmds = ['pip install -r ch07/requirements.txt',
-                  'python -m spacy download en_core_web_lg']]
+                  'python -m spacy download en_core_web_lg']
 
     for cmd in setup_cmds:
         print('!'+cmd)
