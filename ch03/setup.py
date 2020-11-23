@@ -12,18 +12,11 @@ else:
     print("You are working on a local system.")
     print(f'Files will be searched relative to "{BASE_DIR}".')
 
-def universal_filename(f):
-    return os.path.join(BASE_DIR, f)
-
-
-
-_DEBATES_FILE = os.path.join('data', 'un-general-debates', 'un-general-debates-blueprint.csv.gz')
-DEBATES_FILE = universal_filename(_DEBATES_FILE)
-
 if ON_COLAB:
     # there are some generic files, maybe externalize?
     required_files = [
                   'settings.py',
+                   'ch03/requirements.txt'
     ]
     print("Downloading required files ...")
     for file in required_files:
@@ -32,7 +25,7 @@ if ON_COLAB:
         os.system(cmd)
 
     print("\nAdditional setup ...")
-    setup_cmds = ['pip install -r ch01/requirements.txt']
+    setup_cmds = ['pip install -r ch03/requirements.txt']
 
     for cmd in setup_cmds:
         print('!'+cmd)
