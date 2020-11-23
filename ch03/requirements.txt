@@ -1,0 +1,5 @@
+xmltodict
+feedparser
+bs4
+readability-lxml
+scrapy
