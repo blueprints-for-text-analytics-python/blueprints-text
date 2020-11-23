@@ -1,2 +1,2 @@
-gensim
+gensim>3.7
 pyLDAvis
