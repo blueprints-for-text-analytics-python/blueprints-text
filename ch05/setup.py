@@ -27,8 +27,8 @@ if ON_COLAB:
     # there are some generic files, maybe externalize?
     required_files = [
                   'settings.py',
-                  _DEBATES_FILE,
-                  'ch05/colab_requirements.txt'
+                  _ABCNEWS_FILE,
+                  'ch05/requirements.txt'
     ]
     print("Downloading required files ...")
     for file in required_files:
@@ -36,4 +36,12 @@ if ON_COLAB:
         print('!'+cmd)
         os.system(cmd)
 
+    print("\nAdditional setup ...")
+    setup_cmds = ['pip install -r ch05/requirements.txt',
+                  'python -m spacy download en']
+
+    for cmd in setup_cmds:
+        print('!'+cmd)
+        if os.system(cmd) != 0:
+            print('  --> ERROR')
 
