@@ -24,7 +24,8 @@ if ON_COLAB:
     required_files = [
         'settings.py',
         'data/amazon-product-reviews/reviews_5_balanced.json.gz',
-	'ch11/requirements.txt'
+	'ch11/requirements.txt',
+	'packages/blueprints/preparation.py'
     ]
 
     print("Downloading required files ...")

@@ -27,7 +27,8 @@ if ON_COLAB:
 	'ch09/what-is-5g-and-who-are-the-major-players-idUSKCN1GR1IN.html',
 	'ch09/predicting-the-next-u-s-recession-idUSKCN1V31JE.html',
 	'ch09/acl2017.tex',
-	'ch09/requirements.txt'
+	'ch09/requirements.txt',
+	'packages/blueprints/preparation.py'
     ]
 
     print("Downloading required files ...")
