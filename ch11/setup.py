@@ -23,7 +23,8 @@ def run(cmd):
 if ON_COLAB:
     required_files = [
         'settings.py',
-        'data/amazon-product-reviews/reviews_5_balanced.json.gz'
+        'data/amazon-product-reviews/reviews_5_balanced.json.gz',
+	'ch11/requirements.txt'
     ]
 
     print("Downloading required files ...")
@@ -37,6 +38,7 @@ if ON_COLAB:
     setup_cmds = [
         'pip install torch==1.7.0+cu101 torchvision==0.8.1+cu101 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html',
 	'pip install -r ch11/requirements.txt',
+	'python -m nltk.downloader opinion_lexicon'
     ]
 
     for cmd in setup_cmds:
@@ -49,6 +51,7 @@ elif True: # change to True to let this run
     setup_cmds = [
         'pip install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html',
 	'pip install -r requirements.txt',
+	'python -m nltk.downloader opinion_lexicon'
     ]
 
     for cmd in setup_cmds:
