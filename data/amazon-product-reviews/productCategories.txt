@@ -1,0 +1,17 @@
+AMAZON_FASHION
+All_Beauty
+Appliances
+Arts_Crafts_and_Sewing
+Automotive
+Cell_Phones_and_Accessories
+Digital_Music
+Gift_Cards
+Grocery_and_Gourmet_Food
+Industrial_and_Scientific
+Luxury_Beauty
+Magazine_Subscriptions
+Musical_Instruments
+Office_Products
+Patio_Lawn_and_Garden
+Prime_Pantry
+Software
