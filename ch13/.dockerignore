@@ -1,0 +1,6 @@
+.git
+.cache
+figures
+**/*.html
+**/*.ipynb
+**/*.css

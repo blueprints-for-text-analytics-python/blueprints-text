@@ -1,0 +1,8 @@
+name: blueprints
+dependencies:
+  - scikit-learn
+  - pandas
+  - notebook
+  - python=3.8
+  - numpy
+prefix: /home/user/miniconda3/envs/blueprints
