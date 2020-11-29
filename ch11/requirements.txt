@@ -1,2 +1,4 @@
 scikit-learn>=0.23.2
 transformers==3.5.1
+spacy==2.3.2
+textacy==0.10.1
