@@ -36,7 +36,8 @@ if ON_COLAB:
 
     print("\nAdditional setup ...")
     setup_cmds = [
-        'pip install -r ch02/requirements.txt'
+        'pip install -r ch02/requirements.txt',
+	'python -m nltk.downloader stopwords'
     ]
 
     for cmd in setup_cmds:
@@ -44,10 +45,11 @@ if ON_COLAB:
         if os.system(cmd) != 0:
             print('  --> ERROR')
 
-elif True: # change to True to let this run
+elif False:# change to True to let this run
     print("\nAdditional setup (may take a few minutes) ...")
     setup_cmds = [
-        'pip install -r requirements.txt'
+        'pip install -r requirements.txt',
+	'python -m nltk.downloader stopwords'
     ]
 
     for cmd in setup_cmds:
