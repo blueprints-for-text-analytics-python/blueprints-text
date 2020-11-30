@@ -1,0 +1,2 @@
+tweepy==3.9.0
+wikipedia-api>=0.5.4
