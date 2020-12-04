@@ -43,15 +43,27 @@ If you run the notebook locally or on Colab, you can execute each cell separatel
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
   * **Chapter 2: yet to come**
-  * **Chapter 3: yet to come**
+  * **Chapter 3: Scraping Websites and Extracting Data**
+  [[git](ch03/Scraping_Extraction.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch03/Scraping_Extraction.ipynb)]
+  [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch03/Scraping_Extraction.ipynb)]
   * **Chapter 4: Preparing Textual Data For Statistics and Machine Learning**
   [[git](ch04/Data_Preparation.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch04/Data_Preparation.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch04/Data_Preparation.ipynb)]
-  * **Chapter 5: yet to come**
+  * **Chapter 5: Feature Engineering and Syntactic Similarity**
+  [[git](ch05/Feature_Engineering_Similarity.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch05/Feature_Engineering_Similarity.ipynb)]
+  [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch05/Feature_Engineering_Similarity.ipynb)]
   * **Chapter 6: yet to come**
-  * **Chapter 7: yet to come**
-  * **Chapter 8: yet to come**
+  * **Chapter 7: How to Explain a Text Classifier**
+  [[git](Explainable_AI.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch07/Explainable_AI.ipynb)]
+  [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch07/Explainable_AI.ipynb)]
+  * **Chapter 8: Unsupervised Methods: Topic Modeling and Clustering**
+  [[Github](Topic_Modeling_Clustering.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch08/Topic_Modeling_Clustering.ipynb)]
+  [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch08/Topic_Modeling_Clustering.ipynb)]
   * **Chapter 9: yet to come**
   * **Chapter 10: Exploring Semantic Relationships with Word Embeddings**
   [[git](ch10/Embeddings.ipynb)]
