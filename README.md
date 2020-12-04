@@ -10,7 +10,7 @@ Published by [O'Reilly, 2020](https://www.oreilly.com/library/view/blueprints-fo
 
 [Order at O'Reilly](https://shop.oreilly.com)  
 [Order at Amazon.com](https://www.amazon.com/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
-[Order at Amazon.de](https://www.amazon.de/Blueprints-Text-Analytics-using-Python/dp/149207408X)
+[Order at Amazon.de](https://www.amazon.de/Blueprints-Text-Analytics-using-Python/dp/149207408X)  
 [Order at Amazon.co.uk](https://www.amazon.co.uk/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
 [Order at Amazon.fr](https://www.amazon.fr/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
 
