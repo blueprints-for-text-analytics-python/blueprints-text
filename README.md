@@ -61,7 +61,7 @@ If you run the notebook locally or on Colab, you can execute each cell separatel
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch07/Explainable_AI.ipynb)]
   [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch07/Explainable_AI.ipynb)]
   * **Chapter 8: Unsupervised Methods: Topic Modeling and Clustering**
-  [[Github](Topic_Modeling_Clustering.ipynb)]
+  [[git](Topic_Modeling_Clustering.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch08/Topic_Modeling_Clustering.ipynb)]
   [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch08/Topic_Modeling_Clustering.ipynb)]
   * **Chapter 9: yet to come**
