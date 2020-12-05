@@ -44,7 +44,10 @@ If you run the notebook locally or on Colab, you can execute each cell separatel
   [[git](ch01/First_Insights.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch01/First_Insights.ipynb)]
-  * **Chapter 2: yet to come**
+  * **Chapter 2: Extracting Textual Insights with APIs**
+  [[git](ch02/API_Data_Extraction.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch02/API_Data_Extraction.ipynb)]
+  [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch02/API_Data_Extraction.ipynb)]
   * **Chapter 3: Scraping Websites and Extracting Data**
   [[git](ch03/Scraping_Extraction.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch03/Scraping_Extraction.ipynb)]
@@ -57,26 +60,36 @@ If you run the notebook locally or on Colab, you can execute each cell separatel
   [[git](ch05/Feature_Engineering_Similarity.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch05/Feature_Engineering_Similarity.ipynb)]
   [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch05/Feature_Engineering_Similarity.ipynb)]
-  * **Chapter 6: yet to come**
+  * **Chapter 6: Text Classification Algorithms**
+  [[git](ch06/Text_Classification.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch06/Text_Classification.ipynb)]
+  [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch06/Text_Classification.ipynb)]
   * **Chapter 7: How to Explain a Text Classifier**
-  [[git](Explainable_AI.ipynb)]
+  [[git](ch07/Explainable_AI.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch07/Explainable_AI.ipynb)]
   [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch07/Explainable_AI.ipynb)]
   * **Chapter 8: Unsupervised Methods: Topic Modeling and Clustering**
-  [[git](Topic_Modeling_Clustering.ipynb)]
+  [[git](ch08/Topic_Modeling_Clustering.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch08/Topic_Modeling_Clustering.ipynb)]
   [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch08/Topic_Modeling_Clustering.ipynb)]
-  * **Chapter 9: yet to come**
+  * **Chapter 9: Text Summarization**
+  [[git](ch09/Text_Summarization.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch09/Text_Summarization.ipynb)]
+  [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch09/Text_Summarization.ipynb)]
   * **Chapter 10: Exploring Semantic Relationships with Word Embeddings**
   [[git](ch10/Embeddings.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch10/Embeddings.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch10/Embeddings.ipynb)]
-  * **Chapter 11: yet to come**
+  * **Chapter 11: Performing Sentiment Analysis on Text Data**
+  [[git](ch11/Sentiment_Analysis.ipynb)]
+  [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch11/Sentiment_Analysis.ipynb)]
+  [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch11/Sentiment_Analysis.ipynb)]
   * **Chapter 12: Building a Knowledge Graph**
   [[git](ch12/Knowledge_Graph.ipynb)]
   [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
-  * **Chapter 13: yet to come**
+  * **Chapter 13: Using Text Analytics in Production**
+  [[git](ch13/)]
 
 
 ## Local Setup
