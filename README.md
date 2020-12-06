@@ -90,6 +90,7 @@ If you run the notebook locally or on Colab, you can execute each cell separatel
   [[colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)]
   * **Chapter 13: Using Text Analytics in Production**
   [[git](ch13/)]
+  [[git](blueprints-for-text-analytics-python/sentiment-app)]
 
 
 ## Local Setup
