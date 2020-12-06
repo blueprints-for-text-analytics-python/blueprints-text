@@ -14,6 +14,6 @@ Understanding entities mentioned in Tweets discussing cryptocurrency.
 
 ![](figures/fig01.png)
 
-Understanding what Formula One teams tweet about and how they are different.
+Understanding what Formula One teams tweet about and how Mercedes (left) is different from Ferrari (right).
 ![](figures/fig02.png)
 
