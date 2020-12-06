@@ -48,7 +48,7 @@ if ON_COLAB:
         if os.system(cmd) != 0:
             print('  --> ERROR')
 
-elif True: # change to True to let this run
+elif False: # change to True to let this run
     print("\nAdditional setup (may take a few minutes) ...")
     setup_cmds = [
         'pip install torch==1.7.0+cpu torchvision==0.8.1+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html',
