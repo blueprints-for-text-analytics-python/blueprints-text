@@ -7,6 +7,8 @@ View Jupyter notebook on
 [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)] or run it on
 [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)].  
 
+Check out the [Youtube-Video how to create the cooccurence graph shown here with Gephi](https://youtu.be/aFTkonEq5L0).
+
 ## Figures
 
 Figure 12-5. Largest connected component of the cooccurrence graph generated from the
