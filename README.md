@@ -1,4 +1,4 @@
-# Blueprints for Text Analysis Using Python
+# Blueprints for Text Analytics Using Python
 
 ## Machine Learning Based Solutions for Common Real World (NLP) Applications
 
