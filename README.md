@@ -31,6 +31,12 @@ If you discover any problems or have recommendations on how to improve the code,
 
 For errors in the book text, please use [O'Reilly's errata page](https://www.oreilly.com/catalog/errata.csp?isbn=0636920309222).
 
+**spaCy 3.0 and Gensim 4.0**
+
+The book uses spaCy 2.3.2 and gensim 3.8.3. spaCy 3.0 is now officially release with several new features and a few API changes (https://spacy.io/usage/v3). 
+
+We are already updating our notebooks, but there are some remaining problems. For example textacy is not yet supporting spacy 3.0. The fix to make the code running again is minor. If you need it before textacy's new version is official please raise an issue and we will provide a solution.
+
 ## View or Run the Notebooks
 
 For each chapter of the book we provide three links: 
