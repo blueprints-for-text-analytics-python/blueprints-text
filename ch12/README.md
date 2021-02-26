@@ -7,6 +7,10 @@ View Jupyter notebook on
 [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)] or run it on
 [[Colab](https://colab.research.google.com/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph.ipynb)].  
 
+We have an adjusted version of the notebook working with spaCy 3:
+[[Github](Knowledge_Graph_spaCy3.ipynb)] or
+[[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch12/Knowledge_Graph_spaCy3.ipynb)].
+
 Check out the Youtube video [Visualizing a Cooccurrence Graph of Named Entities in Gephi](https://youtu.be/aFTkonEq5L0) for the graph shown below.
 
 ## Figures
