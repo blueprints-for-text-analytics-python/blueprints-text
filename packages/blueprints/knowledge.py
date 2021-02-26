@@ -37,15 +37,17 @@ def display_ner(doc, include_punct=False):
 def reset_pipeline(nlp, pipes):
     # remove all custom pipes
     custom_pipes = [pipe for (pipe, _) in nlp.pipeline
-                    if pipe not in ['tagger', 'parser', 'ner']]
+                    if pipe not in ['tagger', 'parser', 'ner',
+                                    'tok2vec', 'attribute_ruler', 'lemmatizer']]
     for pipe in custom_pipes:
         _ = nlp.remove_pipe(pipe)
     # re-add specified pipes
     for pipe in pipes:
-        if 'neuralcoref' in str(pipe.__class__):
+        if 'neuralcoref' == pipe or 'neuralcoref' in str(pipe.__class__):
             nlp.add_pipe(pipe, name='neural_coref')
         else:
             nlp.add_pipe(pipe)
+
     print(f"Model: {nlp.meta['name']}, Language: {nlp.meta['lang']}")
     print(*nlp.pipeline, sep='\n')
 
