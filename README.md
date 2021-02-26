@@ -33,7 +33,7 @@ For errors in the book text, please use [O'Reilly's errata page](https://www.ore
 
 **spaCy 3.0 and Gensim 4.0**
 
-The book uses spaCy 2.3.2 and gensim 3.8.3. spaCy 3.0 is now officially release with several new features and a few API changes (https://spacy.io/usage/v3). 
+The book uses spaCy 2.3.2 and gensim 3.8.3. spaCy 3.0 is now officially release with several new features and a few API changes (https://spacy.io/usage/v3). Gensim 4.0 is in beta (https://github.com/RaRe-Technologies/gensim/releases). 
 
 We are already updating our notebooks, but there are some remaining problems. For example textacy is not yet supporting spacy 3.0. The fix to textacy to make our code running again is minor, but currently you cannot pip-install textacy with spaCy 3. If you need it before textacy's new version is official, please raise an issue and we will provide a solution.
 
