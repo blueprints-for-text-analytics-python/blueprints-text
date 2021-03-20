@@ -35,7 +35,7 @@ For errors in the book text, please use [O'Reilly's errata page](https://www.ore
 
 The book uses spaCy 2.3.2 and gensim 3.8.3. spaCy 3.0 is now officially release with several new features and a few API changes (https://spacy.io/usage/v3). Gensim 4.0 is in beta (https://github.com/RaRe-Technologies/gensim/releases). 
 
-We are already updating our notebooks, but there are some remaining problems. For example textacy is not yet supporting spacy 3.0. The fix to textacy to make our code running again is minor, but currently you cannot pip-install textacy with spaCy 3. If you need it before textacy's new version is official, please raise an issue and we will provide a solution.
+We are already updating our notebooks. But currently textacy is not yet supporting spaCy 3.0, although work is already in progress (see this [pull request](https://github.com/chartbeat-labs/textacy/pull/322) from us). Until textacy for spaCy 3.0 is released, you can use our own fork for the installation (see [blueprints.yaml](blueprints.yaml)). 
 
 ## View or Run the Notebooks
 
