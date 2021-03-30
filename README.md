@@ -15,6 +15,9 @@ Published by [O'Reilly, 2020](https://www.oreilly.com/library/view/blueprints-fo
 [Order at Amazon.fr](https://www.amazon.fr/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
 [Order at Amazon.in](https://www.amazon.in/Blueprints-Text-Analytics-Using-Python-ebook/dp/B08PQ6MWGL/)
 
+**If you like the Book or the code examples here, please leave a friendly comment on Amazon!**  
+<img src="rating.png" width="100"/>
+
 -----------------------------------------------------------------------------------
 
 # Content of this Repository
