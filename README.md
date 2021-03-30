@@ -8,12 +8,13 @@ Published by [O'Reilly, 2020](https://www.oreilly.com/library/view/blueprints-fo
 
 ![cover](https://learning.oreilly.com/library/cover/9781492074076/250w/)
 
-[Order at O'Reilly](https://shop.oreilly.com)  
-[Order at Amazon.com](https://www.amazon.com/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
-[Order at Amazon.de](https://www.amazon.de/Blueprints-Text-Analytics-using-Python/dp/149207408X)  
-[Order at Amazon.co.uk](https://www.amazon.co.uk/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
-[Order at Amazon.fr](https://www.amazon.fr/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
-[Order at Amazon.in](https://www.amazon.in/Blueprints-Text-Analytics-Using-Python-ebook/dp/B08PQ6MWGL/)
+Find the book at  
+[O'Reilly](https://shop.oreilly.com)  
+[Amazon.com](https://www.amazon.com/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
+[Amazon.de](https://www.amazon.de/Blueprints-Text-Analytics-using-Python/dp/149207408X)  
+[Amazon.co.uk](https://www.amazon.co.uk/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
+[Amazon.fr](https://www.amazon.fr/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
+[Amazon.in](https://www.amazon.in/Blueprints-Text-Analytics-Using-Python-ebook/dp/B08PQ6MWGL/)
 
 **If you like the Book or the code examples here, please leave a friendly comment on Amazon!**  
 <img src="rating.png" width="100"/>
