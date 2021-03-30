@@ -2,6 +2,10 @@
 
 ## [Blueprints for Text Analysis Using Python](https://github.com/blueprints-for-text-analytics-python/blueprints-text)
 
+**If you like the Book or the code examples here, please leave a friendly comment on
+[Amazon.com](https://www.amazon.com/Blueprints-Text-Analytics-Using-Python/dp/149207408X)!**
+<img src="../rating.png" width="100"/>
+
 View Jupyter notebook on 
 [[Github]](Data_Preparation.ipynb) or
 [[nbviewer](https://nbviewer.ipython.org/github/blueprints-for-text-analytics-python/blueprints-text/blob/master/ch04/Data_Preparation.ipynb)] or run it on 
