@@ -16,7 +16,7 @@ Find the book at
 [Amazon.fr](https://www.amazon.fr/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
 [Amazon.in](https://www.amazon.in/Blueprints-Text-Analytics-Using-Python-ebook/dp/B08PQ6MWGL/)
 
-**If you like the Book or the code examples here, please leave a friendly comment on Amazon!**  
+**If you like the book or the code examples here, please leave a friendly comment on Amazon!**  
 <img src="rating.png" width="100"/>
 
 -----------------------------------------------------------------------------------
