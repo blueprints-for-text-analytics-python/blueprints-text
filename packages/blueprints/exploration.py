@@ -37,9 +37,21 @@ def idf(df, column='tokens', preprocess=None, min_df=2):
     return idf_df
     
 
-from textacy.text_utils import KWIC
 import random
 import re
+import textacy
+
+if textacy.__version__ < '0.11': # as in printed book
+    from textacy.text_utils import KWIC
+    
+else: # for textacy 0.11.x
+    from textacy.extract.kwic import keyword_in_context
+
+    def KWIC(*args, **kwargs):
+        # call keyword_in_context with all params except 'print_only'
+        return keyword_in_context(*args, 
+                           **{kw: arg for kw, arg in kwargs.items() 
+                            if kw != 'print_only'})
 
 def kwic(doc_series, keyword, window=35, print_samples=5):
 
