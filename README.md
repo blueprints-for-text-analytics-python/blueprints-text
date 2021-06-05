@@ -16,6 +16,8 @@ Find the book at
 [Amazon.fr](https://www.amazon.fr/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
 [Amazon.in](https://www.amazon.in/Blueprints-Text-Analytics-Using-Python-ebook/dp/B08PQ6MWGL/)
 
+Or sign up at O'Reilly for a [free download of Chapter 7 "How to Explain a Classifier"](https://get.oreilly.com/ind_blueprints-for-text-analysis-using-python.html).
+
 **If you like the book or the code examples here, please leave a friendly comment on Amazon!**  
 <img src="rating.png" width="100"/>
 
