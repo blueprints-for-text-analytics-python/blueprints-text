@@ -16,10 +16,13 @@ Find the book at
 [Amazon.fr](https://www.amazon.fr/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
 [Amazon.in](https://www.amazon.in/Blueprints-Text-Analytics-Using-Python-ebook/dp/B08PQ6MWGL/)
 
-Or sign up at O'Reilly for a [free download of Chapter 7 "How to Explain a Classifier"](https://get.oreilly.com/ind_blueprints-for-text-analysis-using-python.html).
-
 **If you like the book or the code examples here, please leave a friendly comment on Amazon!**  
 <img src="rating.png" width="100"/>
+
+## Download your free chapter now! 
+
+[Free download of Chapter 7 "How to Explain a Classifier"](https://get.oreilly.com/ind_blueprints-for-text-analysis-using-python.html).
+
 
 -----------------------------------------------------------------------------------
 
@@ -31,7 +34,7 @@ This repository contains the code examples of our O'Reilly book. You will find a
 
 Below you find the links to view the notebooks here on Github or execute them directly on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb#). In the section thereafter you will find instructions to setup the environment on your local computer.
 
-## Problems and Errors
+## Problems and errors
 
 If you discover any problems or have recommendations on how to improve the code, do not hesitate to [create an issue here in the repository](https://github.com/blueprints-for-text-analytics-python/blueprints-text/issues).
 
