@@ -9,7 +9,7 @@ Published by [O'Reilly, 2020](https://www.oreilly.com/library/view/blueprints-fo
 ![cover](https://learning.oreilly.com/library/cover/9781492074076/250w/)
 
 Find the book at  
-[O'Reilly](https://elearning.ohmportal.de/course/view.php?id=10814)  
+[O'Reilly](https://learning.oreilly.com/library/view/blueprints-for-text/9781492074076/)  
 [Amazon.com](https://www.amazon.com/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
 [Amazon.de](https://www.amazon.de/Blueprints-Text-Analytics-using-Python/dp/149207408X)  
 [Amazon.co.uk](https://www.amazon.co.uk/Blueprints-Text-Analytics-Using-Python/dp/149207408X)  
