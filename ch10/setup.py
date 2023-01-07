@@ -27,8 +27,7 @@ if ON_COLAB:
             print('  --> ERROR')
 
     print("\nAdditional setup ...")
-    setup_cmds = ['pip uninstall -y numpy', # workaround for np/gensim compatibility issue #23 
-                  f'pip install -r {BASE_DIR}/ch10/requirements.txt',
+    setup_cmds = [f'pip install -r {BASE_DIR}/ch10/requirements.txt',
                   'mkdir -p models']
 
     for cmd in setup_cmds:
