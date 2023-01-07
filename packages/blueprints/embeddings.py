@@ -40,7 +40,7 @@ def plot_embeddings(model, search=[], topn=0, show_all=False, train_all=False,
         
     # identify words to plot
     if show_all:
-        words = [w for w in model.vocab]
+        words = [w for w in model.index_to_key]
     else:
         words = search + [sim_word for w in search 
                          for sim_word, _ in model.most_similar(w, topn=topn)]
@@ -52,7 +52,7 @@ def plot_embeddings(model, search=[], topn=0, show_all=False, train_all=False,
         print(f"Calculating {algo} for {len(words)} words ...", end="") 
         reduced_wv = reducer.fit_transform(wv)
     else:
-        print(f"Calculating {algo} for {len(model.vocab)} words ...", end="") 
+        print(f"Calculating {algo} for {len(words)} words ...", end="") 
         reducer.fit(model.vectors)
         reduced_wv = reducer.transform(wv)
     print(f" done.") ###
