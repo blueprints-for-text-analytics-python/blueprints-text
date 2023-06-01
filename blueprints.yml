@@ -20,8 +20,8 @@ dependencies:
 
   - notebook 
   - jupyter 
-  - jupyter_contrib_nbextensions
-  - jupyter_nbextensions_configurator 
+  # - jupyter_contrib_nbextensions
+  # - jupyter_nbextensions_configurator 
 
   - networkx
   - graphviz
