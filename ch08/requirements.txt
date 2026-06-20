@@ -1,2 +1,3 @@
 gensim>3.7
 pyLDAvis
+scipy<1.13
